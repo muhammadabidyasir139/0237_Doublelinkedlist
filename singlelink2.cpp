@@ -115,7 +115,7 @@ bool listEmpty()
     return (START == NULL);
 }
 
-void travrese() 
+void traverse() 
 {
     if (listEmpty())
         cout << "\nList is Empty" << endl;
@@ -168,5 +168,54 @@ void searchData()
         cout << "\nRecord found" << endl;
         cout << "\nRoll number:" << curr->noMhs << endl;
         cout << "\nName:" << curr->name << endl;
+    }
+}
+
+int main () {
+    while (true)
+    {
+        try
+        {
+            cout << "\nMenu" << endl;
+            cout << "1. Add a record ro the list" << endl;
+            cout << "2. Delete a record from the list" << endl;
+            cout << "3. View all record in thr ascending order of roll numbers" << endl;
+            cout << "4. view all record in the descending order of roll numbers" << endl;
+            cout << "5. Search for a record in the list" << endl;
+            cout << "6. Exit" << endl;
+            cout << "\nEnter your choise (1-6):";
+            char ch;
+            cin >> ch;
+
+            switch (ch)
+            {
+            case '1':
+                addNode();
+                break;
+            case '2':
+                deleteNode();
+                break;
+            case '3':
+                traverse();
+                break;
+            case '4':
+                revtraverse();
+                break;
+            case '5':
+                searchData();
+                break;
+            case '6':
+                return 0;
+                break;
+            
+            default:
+                cout << "\ninvalid option" << endl;
+                break;
+            }   
+        }
+        catch (exception &e)
+        {
+            cout << "Check for the values entered." << endl;
+        }
     }
 }
