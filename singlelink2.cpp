@@ -91,4 +91,9 @@ void deleteNode()
         cout << "\n033[31mThe recorn eith roll number " << rollNo << "not found\033[0m" << endl;
         return;
     }
+
+    if(current == START) 
+    {
+        START = START->next;
+    }
 }
